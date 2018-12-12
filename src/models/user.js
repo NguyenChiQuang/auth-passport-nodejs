@@ -9,6 +9,22 @@ const UserSchema = new mongoose.Schema({
   role: { type: String, default: 'user' },
   created: { type: Date },
   updated: { type: Date },
+  
+  //infor user login on facebook
+  facebook: {
+    id: String,
+    token: String,
+    displayName: String,
+    email: String,
+  },
+
+  //infor user login on google
+  google:{
+    id: String,
+    token: String,
+    displayName: String,
+    email: String,
+  }
 });
 
 UserSchema.methods.comparePassword = function comparePassword(password, callback) {
